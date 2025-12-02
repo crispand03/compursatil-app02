@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Despliegue de COMPURSATIL en Web</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .step {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            border-radius: 8px;
+        }
+        
+        .step h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        
+        .step-number {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .code {
+            background: #282c34;
+            color: #abb2bf;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            font-size: 0.9em;
+        }
+        
+        .link-button {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            margin: 10px 5px 10px 0;
+            transition: all 0.3s;
+        }
+        
+        .link-button:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .success {
+            background: #d4edda;
+            border-left-color: #28a745;
+            color: #155724;
+        }
+        
+        .info {
+            background: #d1ecf1;
+            border-left-color: #0c5460;
+            color: #0c5460;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border-left-color: #ff6b6b;
+            color: #856404;
+        }
+        
+        ul {
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+        
+        footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+        
+        .timeline-item {
+            margin: 20px 0;
+            padding-left: 40px;
+            position: relative;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: #667eea;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #667eea;
+        }
+        
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 20px;
+            width: 2px;
+            height: calc(100% + 20px);
+            background: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 Despliegue en Web</h1>
+            <p>COMPURSATIL - Sistema de Gestión</p>
+        </header>
+        
+        <div class="content">
+            <div class="step success">
+                <h3>✅ Estado Actual</h3>
+                <ul>
+                    <li>Código en GitHub: <a href="https://github.com/crispand03/compursatil-app02" class="link-button">Ver Repositorio</a></li>
+                    <li>Workflow GitHub Actions: Configurado ✅</li>
+                    <li>Vite build optimizado: Listo ✅</li>
+                    <li>Documentación: Completa ✅</li>
+                </ul>
+            </div>
+            
+            <div class="step info">
+                <h3>📋 3 Opciones para Publicar</h3>
+                <p style="margin: 15px 0;">Elige la que mejor se adapte a tus necesidades:</p>
+                <ul>
+                    <li><strong>Opción 1:</strong> GitHub Pages (Gratis, Automático, Solo Frontend)</li>
+                    <li><strong>Opción 2:</strong> Vercel (Gratis, Automático, Mejor rendimiento)</li>
+                    <li><strong>Opción 3:</strong> GitHub Pages + Render (Gratis, Completo con API)</li>
+                </ul>
+            </div>
+            
+            <h2 style="color: #667eea; margin: 40px 0 20px 0; border-bottom: 2px solid #667eea; padding-bottom: 10px;">
+                Opción 1: GitHub Pages (⚡ Más Rápida - 5 minutos)
+            </h2>
+            
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Ir a Configuración de GitHub</h3>
+                <p>Abre: <a href="https://github.com/crispand03/compursatil-app02/settings/pages" target="_blank" class="link-button">Settings → Pages</a></p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Activar GitHub Pages</h3>
+                <p>Busca la sección <strong>"Build and deployment"</strong></p>
+                <ul>
+                    <li>Source: Selecciona <strong>"GitHub Actions"</strong></li>
+                    <li>Guarda los cambios</li>
+                </ul>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Monitorear el Workflow</h3>
+                <p>Ve a <a href="https://github.com/crispand03/compursatil-app02/actions" target="_blank" class="link-button">Actions</a></p>
+                <ul>
+                    <li>Espera a que se complete el workflow "Build and Deploy"</li>
+                    <li>Debe mostrar una ✅ verde (toma 2-5 minutos)</li>
+                </ul>
+            </div>
+            
+            <div class="step success">
+                <div class="step-number">✅</div>
+                <h3>¡Listo! Tu sitio está en vivo</h3>
+                <p style="font-size: 1.2em; font-weight: bold;">
+                    🌐 <a href="https://crispand03.github.io/compursatil-app02/" target="_blank" class="link-button">
+                        https://crispand03.github.io/compursatil-app02/
+                    </a>
+                </p>
+            </div>
+            
+            <h2 style="color: #667eea; margin: 40px 0 20px 0; border-bottom: 2px solid #667eea; padding-bottom: 10px;">
+                Opción 2: Vercel (🎯 Mejor Rendimiento - 5 minutos)
+            </h2>
+            
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Crear cuenta en Vercel</h3>
+                <p>Ve a <a href="https://vercel.com" target="_blank" class="link-button">vercel.com</a> y crea una cuenta con GitHub</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Importar Repositorio</h3>
+                <ul>
+                    <li>Haz clic en "Add New Project"</li>
+                    <li>Selecciona: <strong>compursatil-app02</strong></li>
+                    <li>Vercel detectará automáticamente Vite</li>
+                </ul>
+            </div>
+            
+            <div class="step success">
+                <div class="step-number">✅</div>
+                <h3>¡Hecho! Tu sitio está desplegado</h3>
+                <p style="font-size: 1.1em;">Vercel te proporcionará una URL como:</p>
+                <div class="code">https://compursatil-app02.vercel.app</div>
+                <p style="margin-top: 10px;">Y auto-se actualizará con cada push a GitHub 🎉</p>
+            </div>
+            
+            <h2 style="color: #667eea; margin: 40px 0 20px 0; border-bottom: 2px solid #667eea; padding-bottom: 10px;">
+                Opción 3: GitHub Pages + Backend (🔥 Completa - 15 minutos)
+            </h2>
+            
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Deploy Frontend a GitHub Pages</h3>
+                <p>Sigue la Opción 1 arriba ⬆️</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Deploy Backend a Render</h3>
+                <ol>
+                    <li>Ve a <a href="https://render.com" target="_blank" class="link-button">render.com</a></li>
+                    <li>Crea una cuenta con GitHub</li>
+                    <li>Crea un "Web Service"</li>
+                    <li>Conecta tu repositorio compursatil-app02</li>
+                    <li>Configuración:
+                        <div class="code" style="margin-top: 10px;">
+Name: compursatil-api
+Root Directory: server
+Build Command: npm install
+Start Command: npm start
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Configurar Variables de Entorno</h3>
+                <p>En el dashboard de Render, agrega:</p>
+                <div class="code">
+DB_HOST=tu_host_mysql
+DB_USER=tu_usuario
+DB_PASSWORD=tu_contraseña
+DB_NAME=compursatil
+PORT=3001
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Actualizar Frontend</h3>
+                <p>En <code>src/App.jsx</code>, línea ~185, cambia:</p>
+                <div class="code">
+// De:
+const API_URL = 'http://localhost:3001/api';
+
+// A:
+const API_URL = 'https://compursatil-api.onrender.com/api';
+                </div>
+                <p style="margin-top: 10px;">Luego: <code>git push origin main</code></p>
+            </div>
+            
+            <div class="step success">
+                <div class="step-number">✅</div>
+                <h3>Sistema Completo en Vivo</h3>
+                <ul>
+                    <li>Frontend: https://crispand03.github.io/compursatil-app02/</li>
+                    <li>API: https://compursatil-api.onrender.com/api</li>
+                    <li>Con datos en tiempo real desde MySQL ✨</li>
+                </ul>
+            </div>
+            
+            <div class="step warning">
+                <h3>⚠️ Consideraciones Importantes</h3>
+                <ul>
+                    <li><strong>GitHub Pages solo Frontend:</strong> La API no funcionará, pero la interfaz estará visible</li>
+                    <li><strong>Para API en vivo:</strong> Necesitas Render, Railway, Heroku, o similar</li>
+                    <li><strong>CORS:</strong> Si API está en dominio diferente, verifica que permita el frontend</li>
+                    <li><strong>Base URL:</strong> Vite está configurado con <code>base: "/compursatil-app02/"</code> para GitHub Pages</li>
+                </ul>
+            </div>
+            
+            <h2 style="color: #667eea; margin: 40px 0 20px 0; border-bottom: 2px solid #667eea; padding-bottom: 10px;">
+                Comparativa Rápida
+            </h2>
+            
+            <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                <tr style="background: #f8f9fa;">
+                    <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Opción</th>
+                    <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Costo</th>
+                    <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Tiempo</th>
+                    <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Backend</th>
+                </tr>
+                <tr>
+                    <td style="padding: 12px; border: 1px solid #ddd;">GitHub Pages</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;">Gratis</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;">5 min</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;">❌</td>
+                </tr>
+                <tr style="background: #f8f9fa;">
+                    <td style="padding: 12px; border: 1px solid #ddd;">Vercel</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;">Gratis</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;">5 min</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;">❌</td>
+                </tr>
+                <tr>
+                    <td style="padding: 12px; border: 1px solid #ddd;">GitHub Pages + Render</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;">Gratis</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;">15 min</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;">✅</td>
+                </tr>
+            </table>
+            
+            <div class="step info">
+                <h3>📚 Documentación Completa</h3>
+                <p>Para detalles adicionales, ver:</p>
+                <a href="https://github.com/crispand03/compursatil-app02/blob/main/WEB_DEPLOYMENT.md" target="_blank" class="link-button">
+                    📖 Guía Completa de Despliegue
+                </a>
+                <a href="https://github.com/crispand03/compursatil-app02" target="_blank" class="link-button">
+                    🐙 Repositorio en GitHub
+                </a>
+            </div>
+        </div>
+        
+        <footer>
+            <p style="font-weight: bold; margin-bottom: 10px;">Tu aplicación está lista para publicar 🎉</p>
+            <p>Elige cualquiera de las 3 opciones arriba y tendrás tu sistema en vivo en minutos</p>
+        </footer>
+    </div>
+</body>
+</html>
